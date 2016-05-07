@@ -1,10 +1,12 @@
 var AttackingQueens = require('./src/attackingQueens');
 
-
+// Create the AttackingQueens Object //
 var Game1 = new AttackingQueens();
 
+// Build a game board passing the length of the side //
 var newBoard = Game1.buildBoard(8);
 
+// Add game pieces - will behave like a queen in chess //
 // row,column,board,piecename,piececolor //
 
 if (!Game1.setPiece(4,5,newBoard,'Queen','Red')) {
@@ -27,6 +29,7 @@ if (!Game1.setPiece(5,2,newBoard,'Queen','Black')) {
     return;
 }
 
+// Finally have it check if any of the queens are under attack //
 var isUnderAttack = Game1.checkForAttack(newBoard);
 
 console.log(isUnderAttack);
